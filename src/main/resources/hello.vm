@@ -1,0 +1,28 @@
+<html>    
+<body>    
+      
+    #parse("/header.vm")  
+  
+    welcome ${name}  to velocity!  
+    <p>性别：  
+        #if($gender == 1)   
+          	男  
+        #elseif($gender == 0)  
+                                    女  
+        #else   
+                                  保密  
+        #end  
+    </p>  
+  
+    <h4>我的好友：</h4>    
+    #foreach( $info in $friends )  
+       	 姓名：$info.name , 年龄$info.age  
+        <br/>  
+    #end  
+        
+    <h4>Velocity的布局主要常见的两种方式是parse(“文件路径”)和include(“文件路径”)，其中pase和include的区别在于，若包含的文件中有velocity监本标签，parse将会进一步解析，而include将原样显示。</h4>
+          
+    #include("/footer.vm")  
+      
+</body>    
+</html>  
